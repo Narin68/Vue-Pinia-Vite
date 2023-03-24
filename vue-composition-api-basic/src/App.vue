@@ -1,8 +1,20 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { provide, reactive } from "vue";
+
+const user = reactive({
+  name: "Narin",
+  email: "NarinGmail",
+});
+const userData = provide("userData", user);
 </script>
 
 <template>
+  <div class="user-info">
+    <span>{{ user.name }}</span>
+    @
+    <span>{{ user.email }}</span>
+  </div>
   <nav>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
@@ -10,12 +22,21 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 </template>
 
+
+
 <style scoped>
+.user-info {
+  position: absolute;
+  right: 0;
+  background: green;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
