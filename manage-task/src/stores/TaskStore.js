@@ -3,8 +3,8 @@ import { defineStore } from "pinia";
 export const useTaskStore = defineStore("taskStore", {
     state: () => ({
         task: [
-            { id: 1, title: "Read a book", isFav: true },
-            { id: 2, title: "Go home", isFav: false }
+            // { id: 1, title: "Read a book", isFav: true },
+            // { id: 2, title: "Go home", isFav: false }
         ],
         name: "Jonsu"
     }),
@@ -15,7 +15,7 @@ export const useTaskStore = defineStore("taskStore", {
     },
     actions: {
         addTask(title) {
-            let id = this.task.length > 0 ? this.task[this.task.length - 1].id + 1 : 1;
+            let id = this.task.length > 0 ? this.task[0].id + 1 : 1;
             this.task.unshift({ id: id, isFav: false, title: title });
         },
         remove(id) {

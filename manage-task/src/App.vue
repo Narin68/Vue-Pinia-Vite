@@ -7,7 +7,7 @@ const store = useTaskStore();
 const taskStore = store;
 const filter = ref("all");
 const title = ref("");
-taskStore.task.push({ id: 3, title: "Playing game", isFav: false });
+// taskStore.task.push({ id: 3, title: "Playing game", isFav: false });
 const onSubmit = () => {
   if (title.value != "") {
     taskStore.addTask(title.value);
