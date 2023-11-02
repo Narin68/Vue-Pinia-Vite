@@ -3,6 +3,7 @@
     <h1 class="about"><h1>About</h1></h1>
     <div>
       <input type="text" v-autofocus />
+      <div>Fuck You Sinh</div>
     </div>
   </div>
 </template>
